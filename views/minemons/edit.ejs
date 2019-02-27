@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="card card-body">
+        <h3>editemon</h3>
+        <% user.mons.forEach(m => { %>
+            <% if(m._id == monID) { %>
+        <form action="/minemons/<%= m._id %>/new?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+                <label for="title"> date + title</label>
+                <input type="text" class="form-control" name="title" value="<%= m.title %>" required>
+            </div>
+            <div class="form-group">
+                <label for="details"> notemons</label>
+                <div>
+                <textarea class="form-control" 
+                name="details" placeholder="<%= m.details %>"></textarea>
+            </div>
+            </div>
+            <input type="submit" class="btn
+            btn-dark btn-block">savemon</input>
+        </form>
+        <% } %>
+        <% }) %>
+    </div>
+    </html>

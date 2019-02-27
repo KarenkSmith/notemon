@@ -3,16 +3,24 @@ var router = express.Router();
 var passport = require('passport');
 
 
-router.get("/minemons", function(req, res, next){
-  res.render("minemons", {})
-})
+// router.get("/minemons", function (req, res, next) {
+//   res.render('index', {
+//     title: "notemon",
+//     user: req.user,
+//     name: req.query.name,
 
-router.get("/oursemons", function(req, res, next){
-  res.render("oursemons", {})
-})
+//   });
+// })
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'notemon' });
+
+
+router.get('/', function (req, res, next) {
+  res.render('index', {
+    title: "notemon",
+    user: req.user,
+    name: req.query.name,
+
+  });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -23,12 +31,12 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
-    failureRedirect : '/'
+    successRedirect: '/minemons',
+    failureRedirect: '/'
   }
 ));
 
-router.get('/logout', function(req, res){
+router.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });

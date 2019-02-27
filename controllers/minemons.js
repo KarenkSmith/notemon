@@ -3,35 +3,100 @@ var User = require("../models/user");
 module.exports = {
     new: newMon,
     create,
-    edit
+    show,
+    edit,
+    index,
+    getMon,
+    delMon,
+    update
 };
 
-function newMon (req, res, next) {
-   
-    res.render('minemons/new');
-   };
+function index(req, res, next) {
+    // console.log(req.user.mons)
+    res.render('minemons', {
+        title: "notemon",
+        user: req.user,
+        name: req.query.name,
 
- 
-function create (req, res){
-        req.user.mons.push(req.body);
-       req.user.save(function (){
-         res.redirect("/minemons");
-         console.log(req.body)
-       });
-     }
-    // res.render("minemons");
-// };
-
-function edit(req, res){
-
-    res.render("minemons/edit");
+    });
 }
 
-// function delMon(req, res, next) {
-//     Mon.findOne({'minemons._id': req.params.id}, function(err, student) {
-//       student.facts.id(req.params.id).remove();
-//       student.save(function(err) {
-//         res.redirect('/students');
-//       });
-//     });
-//   }
+function newMon(req, res, next) {
+    // console.log(req.user)
+    res.render("minemons/new", { user: req.user });
+};
+
+function show(req, res) {
+    // console.log('USER: ', req.user);
+    
+    res.render('minemons/show', {
+        user: req.user
+    })
+};
+
+function getMon(req, res, next) {
+
+
+    var monID = req.params.id
+
+    res.render('minemons/show', {
+        user: req.user,
+        monID
+    })
+
+};
+
+function create(req, res) {
+    User.findById(req.params.id, function (err, u) {
+        u.mons.push(req.body);
+        u.save(function (err) {
+            res.redirect(`/minemons`);
+        });
+    });
+}
+
+function edit(req, res) {
+    var monID = req.params.id
+        res.render("minemons/edit", {
+            user: req.user,
+            monID
+        });
+}
+
+function update(req, res){
+    var monID = req.params.id
+    // console.log(req.user.mons)
+
+    req.user.mons.forEach(m => {
+        if(m._id == monID){
+            // console.log(m)
+            m.title = req.body.title
+            m.details = req.body.details
+
+            req.user.save(function (err) {
+            console.log(m)
+            res.redirect(`/minemons`);
+        });
+        }
+    })
+
+}
+
+
+function delMon(req, res, next) {
+
+
+    // req.user.mons.splice()
+    
+    req.user.mons.forEach((m, i) => {
+        if(m._id == req.params.id){
+            // console.log(m)
+            console.log(i)
+            console.log(req.user.mons[i])
+            req.user.mons.splice()
+            req.user.save()
+            // return req.user.mons
+        }
+    });
+    res.redirect(`/minemons`);
+}

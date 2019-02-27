@@ -1,2 +1,23 @@
 <%- include('../partials/header') %>
 <h3>minemons</h3>
+
+<div>
+    <% user.mons.reverse().forEach(function(m) { %>
+    <div class="card card-body mb-2">
+        <a href="minemons/<%= m._id %>">
+        <h4>
+            <%= m.title %>
+        </h4></a>
+        <p>
+            <%= m.details %>
+        </p>
+       <a class="btn btn-dark btn-block mb-1" 
+       href="/minemons/<%= m._id %>/edit">editemon</a>
+    <form method="POST" action="/minemons/<%= m._id %>?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block"
+        value="deletemon">
+    </form>
+    </div>
+    <% }); %>
+</div>

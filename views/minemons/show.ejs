@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+
+<div>
+
+  <div class="card card-body mb-2">
+    
+      <% user.mons.forEach(m => { %>
+        <% if(m._id == monID) { %>
+        <div class="card card-body mb-2">
+
+          <h4>
+            <%= m.title %>
+          </h4>
+          <p>
+            <%= m.details %>
+          </p>
+        </div>
+        <% } %>
+      <% }) %>
+
+
+  </div>
