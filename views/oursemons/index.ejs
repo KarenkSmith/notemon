@@ -1,4 +1,21 @@
 <%- include('../partials/header') %>
-
 <h3>oursemons</h3>
 
+<div>
+    <% users.forEach(function (user) {
+        user.mons.reverse().forEach(function(m) { %>
+            <div class="card card-body mb-2">
+                <a href="oursemons/<%= user._id %>/<%= m._id %>">
+                <h4>
+                    <%= m.title %>
+                </h4></a>
+                <p>
+                    <%= m.details %>
+                </p>
+                <h8><%=user.name%></h8>
+            </form>
+            </div>
+            <% }); 
+    }) %>
+  
+</div>

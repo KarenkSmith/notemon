@@ -8,6 +8,10 @@ a {
   color: #00B7FF;
 }
 
+a:hover {
+  color: white;
+}
+
 img {
   width: 58px;
   height: 55px;
@@ -28,6 +32,13 @@ a.navbar-brand {
 label {
   font-size: 10px;
 }
+h8 {
+  color: rgb(255, 192, 228);
+}
+
+input.btn.btn-dark.btn-block {
+  background-color: rgb(255, 192, 228);
+}
 
 h3, h1 {
   text-align: center;
@@ -44,7 +55,7 @@ p {
 
 textarea.form-control {
   background-color: solid black;
-  color: white;
+
   height: 300px;
 }
 

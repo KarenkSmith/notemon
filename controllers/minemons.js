@@ -23,25 +23,24 @@ function index(req, res, next) {
 
 function newMon(req, res, next) {
     // console.log(req.user)
-    res.render("minemons/new", { user: req.user });
+    res.render("minemons/new", { user: req.user, title: "take notemon" });
 };
 
 function show(req, res) {
     // console.log('USER: ', req.user);
     
     res.render('minemons/show', {
-        user: req.user
+        user: req.user,
+        title: "minemon"
     })
 };
 
 function getMon(req, res, next) {
-
-
     var monID = req.params.id
-
     res.render('minemons/show', {
         user: req.user,
-        monID
+        monID,
+        title: "minemon"
     })
 
 };
@@ -59,7 +58,8 @@ function edit(req, res) {
     var monID = req.params.id
         res.render("minemons/edit", {
             user: req.user,
-            monID
+            monID,
+            title: "editemon"
         });
 }
 
@@ -82,21 +82,12 @@ function update(req, res){
 
 }
 
-
 function delMon(req, res, next) {
 
-
-    // req.user.mons.splice()
-    
-    req.user.mons.forEach((m, i) => {
-        if(m._id == req.params.id){
-            // console.log(m)
-            console.log(i)
-            console.log(req.user.mons[i])
-            req.user.mons.splice()
-            req.user.save()
-            // return req.user.mons
-        }
-    });
+req.user.mons.id(req.params.id).remove();
+req.user.save(function (err) {
+    // console.log(m)
     res.redirect(`/minemons`);
+});
+    
 }
