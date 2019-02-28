@@ -4,6 +4,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.columns {
+ columns: 2;
+ -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
+}
+
 a {
   color: #00B7FF;
 }
@@ -23,6 +30,13 @@ h1, h3, label, .navbar-brand {
   font-family: 'Press Start 2P', cursive;
   color: white;
 }
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+ margin: auto;
+ width: 200px;
+}
 
 a.navbar-brand {
   font-size: 20px;
@@ -34,10 +48,6 @@ label {
 }
 h8 {
   color: rgb(255, 192, 228);
-}
-
-input.btn.btn-dark.btn-block {
-  background-color: rgb(255, 192, 228);
 }
 
 h3, h1 {
@@ -55,17 +65,24 @@ p {
 
 textarea.form-control {
   background-color: solid black;
-
+  border-radius: 0 !important;
   height: 300px;
 }
 
 div.card.card-body {
   background-color: black;
+  border-radius: 0 !important;
+  -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
 }
 
 div.container {
   background-color: black;
+}
 
+input.form-control {
+  border-radius: 0 !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -81,17 +98,124 @@ div.container {
 .google {
   color: white;
   border-color: rgb(239, 248, 0);
-
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
 }
+
+.right {
+  margin: 0;
+}
+
+.google1, .btn.btn-dark.btn-block.mb-1, .btn.btn-danger.btn-block {
+  float: right;
+  background-color: black;
+  color: rgb(255, 192, 228);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 1px;
+}
+
 .google:hover {
   background-color: rgb(239, 248, 0);
   color: black;
   border-color: rgb(239, 248, 0);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.btn.btn-danger.btn-block:hover {
+  background-color: red;
+  color: black;
+  
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+.btn.btn-dark.btn-block.mb-1:hover {
+  background-color: rgb(239, 248, 0);
+  color: black;
+  border-color: rgb(239, 248, 0);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+.google1:hover {
+  background-color: rgb(239, 248, 0);
+  color: black;
+  border-color: rgb(239, 248, 0);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
 }
 
 .home-intro {
   color: rgb(239, 248, 0);
-  text-align: center;
+ text-align: center;
   font-family:  'Press Start 2P', cursive;
-  font-size: 40px;
+  font-size: 30px;
+  margin: auto;
+ 
+}
+
+.btn.btn-dark1 {
+  background-color: black;
+  color:white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  border-radius: 0 !important;
+  padding: 0px;
+  margin: 0;
+}
+
+.btn.btn-dark1:hover {
+  background-color: rgb(239, 248, 0);
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 0 px;
+}
+
+input.btn.btn-dark.btn-block {
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  border-radius: 0 !important;
+}
+input.btn.btn-dark.btn-block:hover {
+  background-color: rgb(239, 248, 0);
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  
+}
+
+.logo2 {
+  width: 148px;
+  height: 145px;
+}
+
+.btn.btn-dark.btn-block.mb-1 {
+  border-radius: 0 !important;
+}
+
+.btn.btn-danger.btn-block {
+  border-radius: 0 !important;
+
+}
+
+label {
+  color: rgb(255, 192, 228);
+}
+
+.btn.btn-dark.btn-block1 {
+  border-radius: 0 !important;
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  border-radius: 0 !important;
+}
+.btn.btn-dark.btn-block1:hover {
+  background-color: rgb(239, 248, 0);
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
 }
