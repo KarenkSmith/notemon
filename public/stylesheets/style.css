@@ -145,6 +145,10 @@ input.form-control {
   font-size: 10px;
 }
 
+li {
+  list-style: none;
+}
+
 .home-intro {
   color: rgb(239, 248, 0);
  text-align: center;
