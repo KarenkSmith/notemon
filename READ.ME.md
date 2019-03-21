@@ -1,7 +1,7 @@
 [NOTEMON](https://the-real-notemon.herokuapp.com/) the note sharing app for coders
 
 logemon with Google oAuth
-![Imgur](https://i.imgur.com/bwOy1pg.png)
+![Imgur](https://i.imgur.com/tIXRelU.png)
 
 take notemon - write your mon and share it
 
